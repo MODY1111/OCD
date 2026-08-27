@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --animate-fade-in-down: fade-in-down 0.2s ease-out;
+
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+html[dir="rtl"] body {
+  font-family: 'IBM Plex Sans Arabic', 'Inter', sans-serif;
+}
+
+html[dir="rtl"] .uppercase {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Mobile safety: never let a long word or wide child break the layout */
+@media (max-width: 640px) {
+  h1,
+  h2,
+  h3,
+  p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  img,
+  video {
+    max-width: 100%;
+  }
+}
